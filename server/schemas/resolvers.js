@@ -15,7 +15,7 @@ const resolvers = {
             .populate('friends')
             .populate('thoughts');
         },
-        user: async (parent, { username}) => {
+        user: async (parent, { username }) => {
             return User.findOne({ username })
             .select('-__v -password')
             .populate('friends')
